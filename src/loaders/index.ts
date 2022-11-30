@@ -1,8 +1,17 @@
 import startDB from "../database/index";
 
 class Loader {
-  start() {
+  initDB() {
     startDB();
+  }
+
+  initEnv() {
+    require("dotenv").config();
+  }
+
+  start() {
+    this.initEnv();
+    this.initDB();
   }
 }
 

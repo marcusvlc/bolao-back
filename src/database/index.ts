@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 
 async function startDB() {
+  const mongoURL = process.env.MONGO_DB_CONNECT_URL;
+  if (!mongoURL) {
+    console.log(mongoURL);
+    return;
+  }
   await mongoose
-    .connect(
-      "mongodb+srv://tpvplays:123456aa@cluster0.yjyhn8w.mongodb.net/test"
-    )
+    .connect(mongoURL)
     .then(() => {
       console.log("Connected to DB");
     })

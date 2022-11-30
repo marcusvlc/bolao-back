@@ -6,6 +6,7 @@ const cors = require("cors");
 
 // Iniciando aplicacao
 const app = express();
+
 loaders.start();
 
 // Using
