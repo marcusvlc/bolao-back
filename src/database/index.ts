@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 async function startDB() {
   const mongoURL = process.env.MONGO_DB_CONNECT_URL;
   if (!mongoURL) {
-    console.log(mongoURL);
     return;
   }
   await mongoose
