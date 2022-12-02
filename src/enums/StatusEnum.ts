@@ -3,5 +3,6 @@ export enum StatusType {
   NOT_FOUND = 404,
   OK = 200,
   UNKNOW = 500,
+  UNAUTHORIZED = 401,
   FORBIDDEN = 403,
 }
