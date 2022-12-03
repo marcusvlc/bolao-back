@@ -25,7 +25,12 @@ class UserController {
 
   async list(req: Request, res: Response) {
     const arrUsers = await User.find();
+    return res.json(arrUsers);
+  }
 
+  async deleteAll(_req: Request, res: Response) {
+    await User.deleteMany();
+    const arrUsers = await User.find();
     return res.json(arrUsers);
   }
 }
