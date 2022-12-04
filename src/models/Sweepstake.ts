@@ -1,6 +1,21 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
-export const SweepStakeSchema = new Schema({
+export interface ISweepStake extends Document {
+  title: string;
+  started: boolean;
+  owner: Schema.Types.ObjectId;
+  createdAt: Date;
+  participants: Participant[];
+}
+
+interface Participant {
+  userId: Schema.Types.ObjectId;
+  name: string;
+  username: string;
+  points: number;
+}
+
+export const SweepStakeSchema = new Schema<ISweepStake>({
   title: {
     type: String,
     required: true,

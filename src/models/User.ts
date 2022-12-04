@@ -1,7 +1,15 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
 const bcrypt = require("bcryptjs");
 
-const UserSchema = new mongoose.Schema({
+export interface IUser extends Document {
+  name: string;
+  email: string;
+  username: string;
+  password: string;
+  createdAt: Date;
+}
+
+const UserSchema = new mongoose.Schema<IUser>({
   name: {
     type: String,
     require: true,
@@ -19,7 +27,7 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     require: true,
-    select: true, // todo: change to false later
+    select: false,
   },
   createdAt: {
     type: Date,

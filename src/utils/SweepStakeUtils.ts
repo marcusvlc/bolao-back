@@ -38,8 +38,6 @@ class SweepStakeUtils {
         .json({ message: "Usuário a ser adicionado já existe no bolão" });
     }
 
-    console.log(sweepStake, sweepStake.participants);
-
     sweepStake.participants.push({
       name: addUser.name,
       points: 0,

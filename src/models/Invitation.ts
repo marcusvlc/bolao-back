@@ -1,6 +1,12 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
-const InvitationSchema = new Schema({
+export interface IInvitation extends Document {
+  toUser: Schema.Types.ObjectId;
+  sweepStake: Schema.Types.ObjectId;
+  createdAt: Date;
+}
+
+const InvitationSchema = new Schema<IInvitation>({
   toUser: {
     type: Schema.Types.ObjectId,
     ref: "User",

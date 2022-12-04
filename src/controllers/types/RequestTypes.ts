@@ -1,14 +1,15 @@
 import { Request } from "express";
+import { IUser } from "../../models/User";
+import { ISweepStake } from "../../models/Sweepstake";
 
 export interface TypedRequest<T> extends Request {
   body: T;
 }
 
-// todo : define types
 export interface BaseSweepStakeBody extends BaseAuthBody {
-  sweepStake: any;
+  sweepStake: ISweepStake;
 }
 
 export interface BaseAuthBody {
-  user: any;
+  user: IUser;
 }
