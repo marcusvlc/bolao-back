@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const SweepStakeSchema = new Schema({
+export const SweepStakeSchema = new Schema({
   title: {
     type: String,
     required: true,

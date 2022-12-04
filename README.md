@@ -10,9 +10,9 @@
 
 [X] Fazer login com JWT
 
-[ ] Criar um Bolão
+[X] Criar um Bolão
 
-[ ] Criar um invite para um usuário participar do Bolão
+[X] Criar um invite para um usuário participar do Bolão
 
 [ ] Começar um Bolão
 
