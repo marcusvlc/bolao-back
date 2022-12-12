@@ -10,8 +10,8 @@ async function startDB() {
     .then(() => {
       console.log("Connected to DB");
     })
-    .catch(() => {
-      console.log("Error connecting to DB");
+    .catch((error) => {
+      console.log("Error connecting to DB", error);
     });
 }
 
