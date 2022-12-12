@@ -4,6 +4,7 @@ import InvitationController from "./controllers/InvitationController";
 import SweepStakeController from "./controllers/SweepStakeController";
 import UserController from "./controllers/UserController";
 import { RoutePrefix } from "./enums/RoutePrefixEnum";
+import { StatusType } from "./enums/StatusEnum";
 import AuthMiddleware from "./middlewares/AuthMiddleware";
 import SweepStakeMiddleware from "./middlewares/SweepStakeMiddleware";
 
@@ -16,6 +17,10 @@ router.get(
   UserController.list
 );
 router.post(RoutePrefix.AUTH, AuthController.authenticate);
+
+router.get(RoutePrefix.VERIFY_TOKEN, AuthMiddleware.verifyJWT, (_req, res) =>
+  res.send(StatusType.OK)
+);
 
 router.post(
   RoutePrefix.SWEEP_STAKE,
